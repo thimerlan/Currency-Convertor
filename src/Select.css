@@ -5,26 +5,28 @@
   transform: translateY(-40px) translateX(-60px);
   /* margin-top: calc(50vh - 50px); */
 }
+
 option {
   background-color: rgb(56, 50, 50) !important;
+  font-family: "Poppins";
   border-radius: 10px !important;
+  box-shadow: inset 0px 0px 20px 20px #ff0000;
 }
-option:hover{
-	background-color: #222 !important;
-	
+option:hover {
+  box-shadow: 0px 0px 20px 20px #191919;
+  background-color: rgb(12, 27, 232) !important;
 }
 .selectClassName {
+  font-family: "Poppins";
   padding: 15px 10px;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   position: relative;
-  font-family: "Montserrat";
   width: 100%;
+  background-color: transparent;
   border: 1px solid #191919;
   border-radius: 6px;
-  font-family: "Montserrat";
-  background: transparent;
   cursor: pointer;
   color: white;
   outline: none;
@@ -68,4 +70,25 @@ option:hover{
   margin-top: -50%;
   content: "";
   transform: rotate(45deg);
+}
+
+@media (max-width: 577px) {
+  .containerSelect {
+    width: 70px;
+    transform: translateY(-40px) translateX(-30px);
+  }
+}
+@media (max-width: 447px) {
+  .containerSelect {
+    width: 60px;
+    transform: translateY(-33px) translateX(-10px);
+  }
+  .downArrow {
+    right: calc(20px / 2);
+    bottom: calc(30px / 2);
+  }
+  .selectClassName {
+	  width: 80%;
+	  padding: 5px;
+  }
 }

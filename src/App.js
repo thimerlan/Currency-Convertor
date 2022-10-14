@@ -43,7 +43,7 @@ function App() {
                   setCash(e.target.value);
                 }}
                 id="minValue"
-                placeholder="Enter USD"
+                placeholder={`Enter ${fromPrice}`}
                 type="number"
               />
               <div>
