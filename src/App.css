@@ -1,38 +1,85 @@
-.App {
-  text-align: center;
-}
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+@import url(https://fonts.googleapis.com/css?family=Lato:100,100italic,300,300italic,regular,italic,700,700italic,900,900italic);
+* {
+  padding: 0;
+  margin: 0;
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+  box-sizing: border-box;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.container {
+  width: 80%;
+  max-width: 1300px;
+  margin: 0 auto;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  font-family: "Poppins";
+  font-weight: 600;
+  color: #eee;
+  background: #141e30;
+  background: -webkit-linear-gradient(to right, #243b55, #141e30);
+  background: linear-gradient(to right, #243b55, #141e30);
+  overflow: hidden;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
 }
-
-.App-link {
-  color: #61dafb;
+.top h1 {
+  margin-bottom: 1.2rem;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.wrapper {
+  text-align: center;
+  animation: wrapper 1s ease 1;
+  margin-bottom: 12rem;
+  transform: scale(1.2);
+}
+@keyframes wrapper {
+  0% {
+    transform: scale(0.7);
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    transform: scale(1.2);
   }
+}
+input[type="number"] {
+  background-color: #141e30;
+  outline: none;
+  border: 1.1px solid #243b55;
+  padding: 7px 15px;
+  color: #fff;
+  font-weight: 555;
+  transition: 0.5s;
+  border-radius: 1.1ex;
+  box-shadow: 0px 0px 13px 2px #25486f;
+}
+input::placeholder {
+  font-weight: 555px;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  font-family: "lato";
+  color: rgb(158, 156, 155);
+}
+input:focus {
+  box-shadow: 0px 0px 3px 2px #25486f;
+}
+.footer {
+  margin-top: 2rem;
+}
+.footer #generate {
+  padding: 7px 12px;
+  background-color: #141e30;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 560;
+  border-radius: 1.1ex;
+  font-family: "Lato" !important;
+  border: 1px solid #25486f;
+  opacity: 0.8;
+  cursor: pointer;
+  transition: 0.3s;
+}
+#generate:active {
+  background-color: #1b4aa1;
 }
