@@ -39,10 +39,10 @@ function App() {
     return setResult(result);
   };
   const buckCalForward = () => {
-    let result = price / rates[toPrice];
-    let price = result * rates[fromPrice];
-    return setCash(cash);
-    // return setResult(result);
+    let resultx = (rates[fromPrice] / rates[toPrice]) * result;
+    console.log(resultx);
+    console.log(rates[fromPrice] / rates[toPrice]);
+    setCash(resultx);
   };
   const clearInputs = () => {
     setCash("");
@@ -117,14 +117,25 @@ function App() {
               </div>
             </div>
             <div className="footer">
-              <button
-                disabled={cash ? false : true}
-                onClick={cash ? () => buckCal() : () => buckCalForward()}
-                // onClick={() => buckCal()}
-                id="generate"
-              >
-                Go Ahead !
-              </button>
+              {cash.length ? (
+                <button
+                  disabled={cash ? false : true}
+                  onClick={() => buckCal()}
+                  // onClick={() => buckCal()}
+                  id="generate"
+                >
+                  Go Ahead !
+                </button>
+              ) : (
+                <button
+                  disabled={!cash ? false : true}
+                  onClick={() => buckCalForward()}
+                  // onClick={() => buckCal()}
+                  id="generate"
+                >
+                  Go Ahead !
+                </button>
+              )}
               <button onClick={() => clearInputs()} id="generate">
                 Clear !
               </button>
