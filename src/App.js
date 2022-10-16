@@ -20,14 +20,35 @@ function App() {
     }
     fetData();
   }, []);
+  //   cash < 0 &&
+
+  let re = /[^0-9\-\.]/gi;
+
+  //   function DPCM(input) {
+  //     var value = input.value;
+  //     var re = /[^0-9\-\.]/gi;
+  //     if (re.test(value)) {
+  //       value = value.replace(re, "");
+  //       input.value = value;
+  //     }
+  //   }
   //   console.log(rates);
   const buckCal = () => {
     let price = cash / rates[fromPrice];
     let result = price * rates[toPrice];
     return setResult(result);
   };
-
-  console.log(result);
+  const buckCalForward = () => {
+    let result = price / rates[toPrice];
+    let price = result * rates[fromPrice];
+    return setCash(cash);
+    // return setResult(result);
+  };
+  const clearInputs = () => {
+    setCash("");
+    setResult("");
+  };
+  //   console.log(result);
   return (
     <div className="App">
       <main>
@@ -96,8 +117,16 @@ function App() {
               </div>
             </div>
             <div className="footer">
-              <button onClick={() => buckCal()} id="generate">
+              <button
+                disabled={cash ? false : true}
+                onClick={cash ? () => buckCal() : () => buckCalForward()}
+                // onClick={() => buckCal()}
+                id="generate"
+              >
                 Go Ahead !
+              </button>
+              <button onClick={() => clearInputs()} id="generate">
+                Clear !
               </button>
             </div>
             <div className="result"></div>
