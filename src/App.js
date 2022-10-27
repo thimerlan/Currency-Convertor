@@ -3,8 +3,6 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import "./Select.css";
 
-//cdn.cur.su/api/nbu.json
-// https://cdn.cur.su/api/latest.json
 function App() {
   const [rates, setRates] = useState({});
   const [cash, setCash] = useState("");
@@ -20,19 +18,9 @@ function App() {
     }
     fetData();
   }, []);
-  //   cash < 0 &&
 
-  let re = /[^0-9\-\.]/gi;
 
-  //   function DPCM(input) {
-  //     var value = input.value;
-  //     var re = /[^0-9\-\.]/gi;
-  //     if (re.test(value)) {
-  //       value = value.replace(re, "");
-  //       input.value = value;
-  //     }
-  //   }
-  //   console.log(rates);
+  
   const buckCal = () => {
     let price = cash / rates[fromPrice];
     let result = price * rates[toPrice];
@@ -48,7 +36,7 @@ function App() {
     setCash("");
     setResult("");
   };
-  //   console.log(result);
+
   return (
     <div className="App">
       <main>
